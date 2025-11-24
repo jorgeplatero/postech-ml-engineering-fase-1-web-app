@@ -1,4 +1,4 @@
-# 🌸 Preditor de Espécies de Iris
+# 🌸 Preditor de Espécies Iris
 
 Este é um aplicativo web interativo construído com **Streamlit** que atua como **cliente** de uma **API RESTful** (hospedada no Vercel) para classificar a espécie da flor Iris, baseada em suas características morfológicas.
 
@@ -20,7 +20,7 @@ A aplicação atua como um frontend (cliente) que se comunica com um backend (AP
 | **Ambiente** | **Python** | `>=3.11, <4.0` | Versões compatíveis para a execução do projeto. |
 | **Gerenciamento** | **Poetry** | `2.2.1` | Gerenciador de dependências e ambientes virtuais. |
 
-### URL da API Externa
+### URL da API
 
 O aplicativo está configurado para interagir com o *backend* no Vercel:
 
@@ -49,7 +49,7 @@ cd preditor-iris
 poetry install
 ```
 
-### 3. Executando o Aplicativo (Frontend)
+### 3. Executando o Aplicativo
 
 Com o ambiente virtual ativo, inicie o aplicativo Streamlit:
 
