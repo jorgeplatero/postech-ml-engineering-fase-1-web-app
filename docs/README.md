@@ -53,8 +53,8 @@ A aplicação atua como cliente que se comunica com a API externa.
 
 ### Integrações
 
-O aplicativo está configurado para interagir com API em produção no Vercel, cujo repositório pode ser acessado no link abaixo:
+O aplicativo está configurado para interagir com API em produção no Vercel, cujo link e repositório pode ser acessado no link abaixo:
 
-URL da API: `https://postech-flask-ml-fase-1.vercel.app`
+API: `https://postech-flask-ml-fase-1.vercel.app`
 
 Repositório GitHub: `https://github.com/jorgeplatero/postech_flask_ml_fase_1`
