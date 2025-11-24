@@ -8,7 +8,7 @@ Este é um aplicativo web interativo construído com **Streamlit** que atua como
 * **Predição em tempo real:** permite a submissão interativa das quatro características da Iris (**comprimento/largura da sépala/pétala**) para serem processadas por um modelo de Machine Learning via API externa.
 * **Histórico de predições:** após o login, o usuário pode visualizar e paginar o histórico de predições, que é persistido no banco de dados da API.
 
-## Arquitetura e Tecnologias
+## Tecnologias
 
 A aplicação atua como cliente que se comunica com a API externa.
 
@@ -38,14 +38,14 @@ Você deve ter o **Python** (versão 3.11 ou superior) e o gerenciador de depend
 
 ### 2. Configuração do Ambiente
 
-1. **Clone o Repositório:**
+1. **Clone o repositório:**
 
 ```bash
 git clone [URL_DO_SEU_REPOSITÓRIO]
 cd preditor-iris
 ```
 
-2. **Instalação de Dependências:** o Poetry lerá o `pyproject.toml` e instalará todas as dependências no ambiente virtual.
+2. **Instalação de dependências:** o Poetry lerá o `pyproject.toml` e instalará todas as dependências no ambiente virtual.
 
 ```bash
 poetry install
