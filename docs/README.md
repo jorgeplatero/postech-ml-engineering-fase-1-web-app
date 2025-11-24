@@ -1,12 +1,12 @@
-# 🌸 Preditor de Espécies Iris
+# Preditor de Espécies Iris 🌸
 
-Este é um aplicativo web interativo construído com **Streamlit** que atua como **cliente** de uma **API RESTful** (hospedada no Vercel) para classificar a espécie da flor Iris, baseada em suas características morfológicas.
+Este é um aplicativo web interativo construído com **Streamlit** que atua como **cliente** de uma **API RESTful** que classfica espécies Iris com base em suas características morfológicas.
 
 ## Funcionalidades
 
 * **Autenticação JWT:** implementa **login** e **registro** de usuários, protegendo o acesso ao endpoint de predição através de **JWT**.
 * **Predição em tempo real:** permite a submissão interativa das quatro características da Iris (**comprimento/largura da sépala/pétala**) para serem processadas por um modelo de Machine Learning via API externa.
-* **Histórico de predições:** após o login, o usuário pode visualizar e paginar (*limit* e *offset*) o histórico de predições, que é persistido no banco de dados da API.
+* **Histórico de predições:** após o login, o usuário pode visualizar e paginar o histórico de predições, que é persistido no banco de dados da API.
 
 ## Arquitetura e Tecnologias
 
@@ -22,9 +22,11 @@ A aplicação atua como cliente que se comunica com a API externa.
 
 ### URL da API
 
-O aplicativo está configurado para interagir com o API em produção no Vercel:
+O aplicativo está configurado para interagir com a API em produção no Vercel, cujo repositório pode ser acessado no link abaixo:
 
-`https://postech-flask-ml-fase-1.vercel.app`
+URL da API: `https://postech-flask-ml-fase-1.vercel.app`
+
+Repositório GitHub: `https://github.com/jorgeplatero/postech_flask_ml_fase_1`
 
 ---
 
