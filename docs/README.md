@@ -41,7 +41,7 @@ Você deve ter o **Python** (versão 3.11 ou superior) e o gerenciador de depend
 1. **Clone o repositório:**
 
 ```bash
-git clone [URL_DO_SEU_REPOSITÓRIO]
+git clone https://github.com/jorgeplatero/preditor_especies_iris.git
 cd preditor-iris
 ```
 
