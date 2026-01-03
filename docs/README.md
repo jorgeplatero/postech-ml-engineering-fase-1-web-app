@@ -1,4 +1,4 @@
-# Preditor de Espécies Iris 🌸
+# Aplicativo Web para Predição de Espécies Iris 🌸
 
 Este é um aplicativo web interativo construído com **Streamlit** que atua como **cliente** de uma **API RESTful** que classfica espécies Iris com base em suas características morfológicas.
 
