@@ -57,3 +57,9 @@ O aplicativo está configurado para interagir com API em produção no Vercel, c
 API: https://postech-api-ml-fase-1.vercel.app/
 
 Repositório GitHub: https://github.com/jorgeplatero/postech-api-ml-fase-1
+
+### Deploy
+
+O deploy deste aplicativo foi realizado via Streamlit Cloud, garantindo disponibilidade e integração contínua com este repositório. 
+
+Link para o aplicativo: https://preditorespeciesiris.streamlit.app/
