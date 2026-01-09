@@ -47,7 +47,7 @@ A aplicação atua como cliente que se comunica com a API externa.
 | **Frontend/App** | **Streamlit** | `^1.51.0` | Framework utilizado para o desenvolvimento do aplicativo web |
 | **Comunicação** | **Requests** | `^2.32.5` | Biblioteca para interagir com a API REST |
 | **Linguagem** | **Python** | `>=3.11, <4.0` | Linguagem de programação base para o desenvolvimento dos scripts |
-| **Gerenciamento** | **Poetry** | `2.2.1` | Gerenciador de pacotes e ambientes virtuais utilizado para garantir a reprodutibilidade das dependências do projeto |
+| **Gerenciamento** | **Poetry** | `2.2.1` | Gerenciador de ambientes virtuais para isolamento de dependências |
 
 ### Integrações
 
