@@ -42,24 +42,23 @@ poetry run streamlit run app.py
 
 A aplicação atua como cliente que se comunica com a API externa.
 
-| Componente | Tecnologia | Versão (Especificada) | Descrição |
+| Componente | Tecnologia | Versão | Descrição |
 | :--- | :--- | :--- | :--- |
-| **Frontend/App** | **Streamlit** | `^1.51.0` | Framework Python para a interface web. |
-| **Comunicação** | **Requests** | `^2.32.5` | Biblioteca para interagir com a API REST. |
-| **Backend/API** | **Flask** (+ JWT) | *(Externo)* | API RESTful responsável pela lógica de ML e segurança. |
-| **Ambiente** | **Python** | `>=3.11, <4.0` | Versões compatíveis para a execução do projeto. |
-| **Gerenciamento** | **Poetry** | `2.2.1` | Gerenciador de dependências e ambientes virtuais. |
+| **Frontend/App** | **Streamlit** | `^1.51.0` | Framework utilizado para o desenvolvimento do aplicativo web |
+| **Comunicação** | **Requests** | `^2.32.5` | Biblioteca para interagir com a API REST |
+| **Linguagem** | **Python** | `>=3.11, <4.0` | Linguagem de programação base para o desenvolvimento dos scripts |
+| **Gerenciamento** | **Poetry** | `2.2.1` | Gerenciador de pacotes e ambientes virtuais utilizado para garantir a reprodutibilidade das dependências do projeto |
 
 ### Integrações
 
-O aplicativo está configurado para interagir com API em produção no Vercel, cujo link e repositório pode ser acessado em:
+O aplicativo está configurado para interagir com API em produção no Vercel.
 
-API: https://postech-api-ml-fase-1.vercel.app/
+Link para a API: https://postech-api-ml-fase-1.vercel.app/
 
-Repositório GitHub: https://github.com/jorgeplatero/postech-api-ml-fase-1
+Link para o repositório da API no GitHub: https://github.com/jorgeplatero/postech-api-ml-fase-1
 
 ### Deploy
 
-O deploy deste aplicativo foi realizado via Streamlit Cloud, garantindo disponibilidade e integração contínua com este repositório. 
+O deploy deste aplicativo foi realizado via Streamlit Cloud. 
 
 Link para o aplicativo: https://preditorespeciesiris.streamlit.app/
