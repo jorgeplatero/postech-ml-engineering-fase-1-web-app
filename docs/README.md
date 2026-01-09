@@ -45,8 +45,8 @@ A aplicação atua como cliente que se comunica com a API externa.
 | Componente | Tecnologia | Versão | Descrição |
 | :--- | :--- | :--- | :--- |
 | **Frontend/App** | **Streamlit** | `^1.51.0` | Framework utilizado para o desenvolvimento do aplicativo web |
-| **Comunicação** | **Requests** | `^2.32.5` | Biblioteca para interagir com a API REST |
-| **Linguagem** | **Python** | `>=3.11, <4.0` | Linguagem de programação base para o desenvolvimento dos scripts |
+| **Comunicação** | **Requests** | `^2.32.5` | Biblioteca para requisições HTTP e consumo de API |
+| **Linguagem** | **Python** | `>=3.11, <4.0` | Linguagem para desenvolvimento de scripts |
 | **Gerenciamento** | **Poetry** | `2.2.1` | Gerenciador de ambientes virtuais para isolamento de dependências |
 
 ### Integrações
@@ -61,4 +61,4 @@ Link para o repositório da API no GitHub: https://github.com/jorgeplatero/poste
 
 O deploy deste aplicativo foi realizado via Streamlit Cloud. 
 
-Link para o aplicativo: https://preditorespeciesiris.streamlit.app/
+Link para o aplicativo web: https://preditorespeciesiris.streamlit.app/
