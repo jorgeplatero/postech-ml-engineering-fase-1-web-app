@@ -3,7 +3,7 @@ import pandas as pd
 import requests
 
 
-API_URL = 'https://postech-mlengineering-fase-1-api.vercel.app/' 
+API_URL = 'https://postech-ml-engineering-fase-1-api.vercel.app/' 
 ENDPOINT_PREDICT = f'{API_URL}/predict'
 ENDPOINT_LOGIN = f'{API_URL}/login'
 ENDPOINT_REGISTER = f'{API_URL}/register'
