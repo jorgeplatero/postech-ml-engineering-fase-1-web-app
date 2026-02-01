@@ -3,11 +3,11 @@ import pandas as pd
 import requests
 
 
-API_URL = 'https://postech-ml-engineering-fase-1-api.vercel.app/' 
-ENDPOINT_PREDICT = f'{API_URL}/predict'
-ENDPOINT_LOGIN = f'{API_URL}/login'
-ENDPOINT_REGISTER = f'{API_URL}/register'
-ENDPOINT_PREDICTIONS = f'{API_URL}/predictions'
+API_URL = 'https://postech-ml-engineering-fase-1-api.vercel.app' 
+ENDPOINT_LOGIN = f'{API_URL}/api/v1/auth/login'
+ENDPOINT_REGISTER = f'{API_URL}/api/v1/auth/register'
+ENDPOINT_PREDICT = f'{API_URL}/api/v1/ml/predict'
+ENDPOINT_PREDICTIONS = f'{API_URL}/api/v1/ml/predictions'
 
 st.set_page_config(
     page_title='Preditor de Espécies Iris 🌸',
