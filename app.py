@@ -3,11 +3,11 @@ import pandas as pd
 import requests
 
 
-API_URL = 'https://postech-api-ml-fase-1.vercel.app/' 
-ENDPOINT_PREVER = f'{API_URL}/predict'
+API_URL = 'https://postech-mlengineering-fase-1-api.vercel.app/' 
+ENDPOINT_PREDICT = f'{API_URL}/predict'
 ENDPOINT_LOGIN = f'{API_URL}/login'
-ENDPOINT_REGISTRO = f'{API_URL}/register'
-ENDPOINT_PREDICOES = f'{API_URL}/predictions'
+ENDPOINT_REGISTER = f'{API_URL}/register'
+ENDPOINT_PREDICTIONS = f'{API_URL}/predictions'
 
 st.set_page_config(
     page_title='Preditor de Espécies Iris 🌸',
@@ -50,7 +50,7 @@ def login(usuario, senha):
 def register(usuario, senha):
     '''Lida com o registro do usuário.'''
     try:
-        response = requests.post(ENDPOINT_REGISTRO, json={'username': usuario, 'password': senha})
+        response = requests.post(ENDPOINT_REGISTER, json={'username': usuario, 'password': senha})
         
         if response.status_code == 201:
             st.success('Registro realizado com sucesso. Faça o login.')
@@ -86,7 +86,7 @@ def predict(comp_sepala, larg_sepala, comp_petala, larg_petala):
     }
 
     try:
-        response = requests.post(ENDPOINT_PREVER, headers=headers, json=data)
+        response = requests.post(ENDPOINT_PREDICT, headers=headers, json=data)
         if response.status_code == 200:
             return response.json().get('predicted_specie')
         elif response.status_code == 401:
@@ -110,13 +110,14 @@ def history(token, limit=10, offset=0):
     }
     params = {'limit': limit, 'offset': offset}
     try:
-        response = requests.get(ENDPOINT_PREDICOES, headers=headers, params=params) 
+        response = requests.get(ENDPOINT_PREDICTIONS, headers=headers, params=params) 
         if response.status_code == 200:
             data = response.json()
             if data:
                 df = pd.DataFrame(data)
                 df['created_at'] = pd.to_datetime(df['created_at']).dt.strftime('%Y-%m-%d %H:%M:%S')
                 df.rename(columns={
+                    'id': 'ID',
                     'created_at': 'Data',
                     'sepal_length': 'Comp. Sépala (cm)',
                     'sepal_width': 'Larg. Sépala (cm)',
@@ -124,7 +125,7 @@ def history(token, limit=10, offset=0):
                     'petal_width': 'Larg. Pétala (cm)',
                     'predicted_specie': 'Espécie Prevista'
                 }, inplace=True)
-                return df[['Data', 'Comp. Sépala (cm)', 'Larg. Sépala (cm)', 'Comp. Pétala (cm)', 'Larg. Pétala (cm)', 'Espécie Prevista']]
+                return df[['ID', 'Data', 'Comp. Sépala (cm)', 'Larg. Sépala (cm)', 'Comp. Pétala (cm)', 'Larg. Pétala (cm)', 'Espécie Prevista']]
             else:
                 return pd.DataFrame()
         elif response.status_code == 401:
@@ -235,7 +236,7 @@ def show_app():
             )
         df_historico = history(st.session_state.token_acesso, limit=limite, offset=offset)
         if not df_historico.empty:
-            st.dataframe(df_historico, use_container_width=True)
+            st.dataframe(df_historico, hide_index=True, width='stretch')
         else:
             st.info('Nenhum histórico para exibir ou falha ao recuperar.')
 
