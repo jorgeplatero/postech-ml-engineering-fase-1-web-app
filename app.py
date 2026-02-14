@@ -175,7 +175,7 @@ def show_login():
 def show():
     '''Renderiza o aplicativo'''
     st.title('Preditor de Espécies Iris 🌸')
-    st.write(f'**Bem vindo, {st.session_state.usuario}!**')
+    st.write(f'Bem vindo, **{st.session_state.usuario}!**')
     _, col2 = st.columns([.9, .1])
     with col2:
         if st.button('Sair', width='stretch', key='logout_btn'):
