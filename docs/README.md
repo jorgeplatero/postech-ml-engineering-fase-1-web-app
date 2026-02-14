@@ -53,7 +53,7 @@ A aplicação atua como cliente que se comunica com a API externa.
 
 O aplicativo web em produção faz requisições para uma API Flask.
 
-Link para a API: https://postech-api-ml-fase-1.vercel.app/
+Link para a API: https://postech-ml-engineering-fase-1-api.onrender.com
 
 Link para o repositório da API: https://github.com/jorgeplatero/postech-api-ml-fase-1
 
