@@ -8,11 +8,11 @@ from dotenv import load_dotenv
 load_dotenv()
 
 
-API_URL = os.getenv('API_BASE_URL', 'http://localhost:5000')
-ENDPOINT_LOGIN = f'{API_URL}/api/v1/auth/login'
-ENDPOINT_REGISTER = f'{API_URL}/api/v1/auth/register'
-ENDPOINT_PREDICT = f'{API_URL}/api/v1/ml/predict'
-ENDPOINT_PREDICTIONS = f'{API_URL}/api/v1/ml/predictions'
+API_BASE_URL = os.getenv('API_BASE_URL', 'http://localhost:5000')
+ENDPOINT_LOGIN = f'{API_BASE_URL}/api/v1/auth/login'
+ENDPOINT_REGISTER = f'{API_BASE_URL}/api/v1/auth/register'
+ENDPOINT_PREDICT = f'{API_BASE_URL}/api/v1/ml/predict'
+ENDPOINT_PREDICTIONS = f'{API_BASE_URL}/api/v1/ml/predictions'
 
 st.set_page_config(
     page_title='Preditor de Espécies Iris 🌸',
@@ -47,7 +47,7 @@ def login(usuario, senha):
                 erro_msg = f'Erro de comunicação com a API (Status: {response.status_code}).'
             st.error(erro_msg)
     except requests.exceptions.ConnectionError:
-        st.error(f'Erro de conexão: não foi possível conectar à API em {API_URL}.')
+        st.error(f'Erro de conexão: não foi possível conectar à API em {API_BASE_URL}.')
     except Exception as e:
         st.error(f'Ocorreu um erro inesperado durante o login: {e}')
 
@@ -67,7 +67,7 @@ def register(usuario, senha):
                 erro_msg = f'Erro de comunicação com a API (Status: {response.status_code}).'
             st.error(erro_msg)
     except requests.exceptions.ConnectionError:
-        st.error(f'Erro de nonexão: não foi possível conectar à API em {API_URL}.')
+        st.error(f'Erro de nonexão: não foi possível conectar à API em {API_BASE_URL}.')
     except Exception as e:
         st.error(f'Ocorreu um erro inesperado durante o registro: {e}')
 
@@ -103,7 +103,7 @@ def predict(comp_sepala, larg_sepala, comp_petala, larg_petala):
             st.error(f"Falha na predição (Status {response.status_code}): {response.json().get('error', 'Erro da API')}")
             return None
     except requests.exceptions.ConnectionError:
-        st.error(f'Erro de Conexão: Não foi possível conectar à API em {API_URL}.')
+        st.error(f'Erro de Conexão: Não foi possível conectar à API em {API_BASE_URL}.')
         return None
 
 
@@ -144,7 +144,7 @@ def history(token, limit=10, offset=0):
             st.error(f"Falha ao obter histórico (Status {response.status_code}): {error_msg}")
             return pd.DataFrame()
     except requests.exceptions.ConnectionError:
-        st.error(f'Erro de Conexão: Não foi possível conectar à API em {API_URL}.')
+        st.error(f'Erro de Conexão: Não foi possível conectar à API em {API_BASE_URL}.')
         return pd.DataFrame()
 
 
@@ -170,23 +170,22 @@ def show_login():
                 cadastrar = st.form_submit_button('Cadastrar')
                 if cadastrar:
                     register(usuario, senha)
-        st.info(f'URL base da API: {API_URL}')
 
 
-def show_app():
+def show():
     '''Renderiza o aplicativo'''
     st.title('Preditor de Espécies Iris 🌸')
-    container_header = st.container()
-    with container_header:
-        st.markdown(f'**Logado como: {st.session_state.usuario}**')
-        if st.button('Sair', key='logout_btn'):
+    st.write(f'**Bem vindo, {st.session_state.usuario}!**')
+    _, col2 = st.columns([.9, .1])
+    with col2:
+        if st.button('Sair', width='stretch', key='logout_btn'):
             history.clear()
             st.session_state.logado = False
             st.session_state.token_acesso = None
             st.session_state.usuario = None
             st.info('Sessão encerrada com sucesso.')
             st.rerun()
-    st.markdown('---')
+    st.write('---')
     st.subheader('🛠️ Parâmetros de entrada')
     col1, col2, col3, col4 = st.columns(4)
     with col1:
@@ -197,7 +196,7 @@ def show_app():
         comp_petala = st.slider('Comp. Pétala', 0.0, 10.0, 1.3, 0.1, key='pl')
     with col4:
         larg_petala = st.slider('Larg. Pétala', 0.0, 10.0, 0.2, 0.1, key='pw')
-    st.markdown('---')
+    st.write('---')
     col1, col2 = st.columns(2)
     with col1:
         st.subheader('Dados Fornecidos')
@@ -247,6 +246,6 @@ def show_app():
 
 
 if st.session_state.logado:
-    show_app()
+    show()
 else:
     show_login()
