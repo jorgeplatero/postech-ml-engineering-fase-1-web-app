@@ -1,9 +1,14 @@
 import streamlit as st
 import pandas as pd
 import requests
+import os
+from dotenv import load_dotenv
 
 
-API_URL = 'https://postech-ml-engineering-fase-1-api.vercel.app' 
+load_dotenv()
+
+
+API_URL = os.getenv('API_BASE_URL', 'http://localhost:5000')
 ENDPOINT_LOGIN = f'{API_URL}/api/v1/auth/login'
 ENDPOINT_REGISTER = f'{API_URL}/api/v1/auth/register'
 ENDPOINT_PREDICT = f'{API_URL}/api/v1/ml/predict'
